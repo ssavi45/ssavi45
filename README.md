@@ -48,6 +48,11 @@ I am an aspiring AI/ML Engineer focused on multimodal learning, computer vision,
 ### GitHub Insights
 
 <p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=ssavi45&show_icons=true&theme=tokyonight&count_private=true" alt="Shoumik's GitHub Stats" height="180px"/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ssavi45&theme=tokyonight" alt="Shoumik's Activity Graph" width="100%"/>
+</p>
+
+<br/>
+
+<p align="left">
   <img src="https://streak-stats.demolab.com/?user=ssavi45&theme=tokyonight" alt="GitHub Streak" height="180px"/>
 </p>
