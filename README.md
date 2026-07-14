@@ -3,14 +3,14 @@
 
 I am an aspiring AI/ML Engineer focused on multimodal learning, computer vision, and building end-to-end digital products. I specialize in translating complex datasets into actionable engineering solutions, designing scalable local AI tools, and deploying robust full-stack workflows.
 
-- 🔭 **Current Focus:** Machine Learning Engineer Intern at **Flyrank AI** 
-- 🎓 **Education:** BSc in Computer Science & Engineering from North South University (Intelligent System Engineering)
-- 📍 **Location:** Dhaka, Bangladesh
-- ✉️ **Connect:** ssavi.pro03@gmail.com | [LinkedIn](https://linkedin.com/in/shoumik-sarkar-nsu)
+- **Current Focus:** Machine Learning Engineer Intern at **Flyrank AI** 
+- **Education:** BSc in Computer Science & Engineering from North South University (Intelligent System Engineering)
+- **Location:** Dhaka, Bangladesh
+- **Connect:** ssavi.pro03@gmail.com | [LinkedIn](https://linkedin.com/in/shoumik-sarkar-nsu)
 
 ---
 
-### 🛠️ Tech Stack & Skills
+### Tech Stack & Skills
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
@@ -28,26 +28,26 @@ I am an aspiring AI/ML Engineer focused on multimodal learning, computer vision,
 
 ---
 
-### 🚀 Featured Projects
+### Featured Projects
 
-#### 👁️ [DeceptiLens: Multimodal Deception Detection](https://github.com/ssavi45/deceptilens-multimodal-deception-pipeline)
+#### [DeceptiLens: Multimodal Deception Detection](https://github.com/ssavi45/deceptilens-multimodal-deception-pipeline)
 * Built an end-to-end multimodal pipeline combining facial landmarks (MediaPipe), audio descriptors (Librosa), and visual embeddings (ResNet-18).
 * Designed a custom cross-attention architecture in PyTorch for bidirectional feature fusion, hitting **82.11% accuracy** on the DOLOS dataset.
 * Deployed as an interactive Streamlit app with real-time performance visualizations.
 
-#### 🕵️ [RumorFusionX: Multimodal Fake Social Media Detection](https://github.com/ssavi45/RumorFusionX)
+#### [RumorFusionX: Multimodal Fake Social Media Detection](https://github.com/ssavi45/RumorFusionX)
 * Developed a misinformation pipeline integrating OCR text extraction, image features, and LLM contextual descriptions.
 * Processed a multilingual dataset of 2,500 images, yielding a **93.07% classification accuracy** using feature fusion via REST APIs.
 
-#### ⚽ [Football Genius: Full Stack Trivia Platform](https://github.com/ssavi45/Football-Genius)
+#### [Football Genius: Full Stack Trivia Platform](https://github.com/ssavi45/Football-Genius)
 * Engineered a mobile-first responsive web app integrating the Google Gemini AI API and Supabase Auth (OAuth/OTP).
 * Automated live player statistics updates using a **GitHub Actions CI/CD pipeline** with a scheduled Node.js scraper.
 
 ---
 
-### 📊 GitHub Insights
+### GitHub Insights
 
 <p align="left">
   <img src="https://github-readme-stats.vercel.app/api?username=ssavi45&show_icons=true&theme=tokyonight&count_private=true" alt="Shoumik's GitHub Stats" height="180px"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ssavi45&layout=compact&theme=tokyonight" alt="Top Languages" height="180px"/>
+  <img src="https://streak-stats.demolab.com/?user=ssavi45&theme=tokyonight" alt="GitHub Streak" height="180px"/>
 </p>
