@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shoumik Sarkar — AI Image Production Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #0e0e0f;
+    --surface:   #161618;
+    --border:    #2a2a2e;
+    --accent:    #c8a96e;
+    --accent-dim:#7a6540;
+    --text:      #e8e6e1;
+    --muted:     #7a7873;
+    --tag-bg:    #1e1e21;
+    --mono:      'IBM Plex Mono', monospace;
+    --sans:      'Inter', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 48px 0 40px;
+  }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+
+  .header-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .header-sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 28px;
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  .header-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .header-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .header-links a:hover { color: var(--accent); border-color: var(--accent-dim); }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent-dim);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-top: 52px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── INTRO BLOCK ── */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 0;
+  }
+  .intro-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 22px;
+  }
+  .intro-card-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent-dim);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .intro-card p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ── WORK SAMPLES ── */
+  .sample {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .sample-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sample-meta { flex: 1; }
+
+  .sample-index {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent-dim);
+    letter-spacing: 0.12em;
+    margin-bottom: 4px;
+  }
+
+  .sample-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .sample-task {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .tag-row {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: flex-start;
+    padding-top: 2px;
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 3px 9px;
+    border-radius: 3px;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+  }
+  .tag.accent {
+    border-color: var(--accent-dim);
+    color: var(--accent);
+    background: #1c1810;
+  }
+
+  .sample-body {
+    padding: 18px 24px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .qa-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .qa-row {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .qa-key {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .qa-val {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .outcome-panel {
+    border-left: 1px solid var(--border);
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .outcome-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #6abf7b;
+    letter-spacing: 0.08em;
+  }
+  .outcome-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #6abf7b;
+    flex-shrink: 0;
+  }
+  .outcome-status.flag { color: #e09a4f; }
+  .outcome-status.flag::before { background: #e09a4f; }
+
+  .outcome-note {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ── SKILLS TABLE ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding-bottom: 60px;
+  }
+  .skill-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 20px;
+  }
+  .skill-block-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent-dim);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+  }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-left {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .footer-right {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent-dim);
+  }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 24px; }
+    .intro-grid { grid-template-columns: 1fr; }
+    .sample-header { flex-direction: column; }
+    .sample-body { grid-template-columns: 1fr; }
+    .outcome-panel { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 16px; }
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-label">AI Image Production · Portfolio</div>
+    <h1>Shoumik Sarkar</h1>
+    <p class="header-sub">
+      AI/ML Engineer with hands-on experience operating image generation pipelines,
+      conducting visual quality control on large-scale datasets, and managing structured
+      production workflows. Based in Dhaka, Bangladesh.
+    </p>
+    <div class="header-links">
+      <a href="mailto:ssavi.pro03@gmail.com">ssavi.pro03@gmail.com</a>
+      <a href="https://github.com/ssavi45" target="_blank">github.com/ssavi45</a>
+      <a href="https://linkedin.com/in/shoumik-sarkar-nsu" target="_blank">linkedin.com/in/shoumik-sarkar-nsu</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- ABOUT -->
+    <div class="section-label">About This Portfolio</div>
+    <div class="intro-grid">
+      <div class="intro-card">
+        <div class="intro-card-label">What I Do</div>
+        <p>Operate AI image generation tools, run structured prompting workflows, and perform first-pass visual QA — catching artifacts, inconsistencies, and output failures before delivery.</p>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card-label">Production Context</div>
+        <p>Each sample below reflects real production work: the tool used, the task briefed, what I was checking for, and the outcome. No showcasing. Just the work.</p>
+      </div>
+    </div>
+
+    <!-- WORK SAMPLES -->
+    <div class="section-label">Work Samples</div>
+
+    <!-- Sample 1 -->
+    <div class="sample">
+      <div class="sample-header">
+        <div class="sample-meta">
+          <div class="sample-index">SAMPLE 01</div>
+          <div class="sample-title">AI-Manipulated Image Dataset — Paired Generation</div>
+          <div class="sample-task">Task: Generate 10,000 authentic / manipulated / mask image triplets for forensic model training</div>
+        </div>
+        <div class="tag-row">
+          <span class="tag accent">Stable Diffusion</span>
+          <span class="tag">Inpainting</span>
+          <span class="tag">SAM Masks</span>
+          <span class="tag">Dataset Curation</span>
+        </div>
+      </div>
+      <div class="sample-body">
+        <div class="qa-panel">
+          <div class="qa-row">
+            <span class="qa-key">Tool / Pipeline</span>
+            <span class="qa-val">Stable Diffusion inpainting + Segment Anything Model (SAM) for semantic mask generation</span>
+          </div>
+          <div class="qa-row">
+            <span class="qa-key">Production Volume</span>
+            <span class="qa-val">10,000 paired image folders — each containing an original, a manipulated variant, and a binary pixel mask</span>
+          </div>
+          <div class="qa-row">
+            <span class="qa-key">Checking For</span>
+            <span class="qa-val">Structural blending anomalies, lighting mismatches at inpainting boundaries, mask precision, inconsistent texture transitions</span>
+          </div>
+        </div>
+        <div class="outcome-panel">
+          <span class="outcome-status">Passed QA</span>
+          <p class="outcome-note">Dense pixel-wise visual checks performed on all outputs before dataset finalisation. Anomalous generations flagged and re-run. Final dataset achieved 0.94 pixel accuracy on downstream localization tasks.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample 2 -->
+    <div class="sample">
+      <div class="sample-header">
+        <div class="sample-meta">
+          <div class="sample-index">SAMPLE 02</div>
+          <div class="sample-title">Visual Data Quality Filtration — ML Pipeline</div>
+          <div class="sample-task">Task: Assess and filter high-volume image data for pipeline reliability at Flyrank AI</div>
+        </div>
+        <div class="tag-row">
+          <span class="tag accent">Python / OpenCV</span>
+          <span class="tag">Visual QA</span>
+          <span class="tag">Artifact Detection</span>
+        </div>
+      </div>
+      <div class="sample-body">
+        <div class="qa-panel">
+          <div class="qa-row">
+            <span class="qa-key">Tool / Pipeline</span>
+            <span class="qa-val">Python-based image processing scripts using OpenCV for automated artifact detection and isolation</span>
+          </div>
+          <div class="qa-row">
+            <span class="qa-key">Production Context</span>
+            <span class="qa-val">Fast-paced remote team workflow, high-volume data ingestion, strict client briefing alignment required</span>
+          </div>
+          <div class="qa-row">
+            <span class="qa-key">Checking For</span>
+            <span class="qa-val">Corrupted frames, resolution inconsistencies, visual noise, misaligned inputs that would degrade downstream model training</span>
+          </div>
+        </div>
+        <div class="outcome-panel">
+          <span class="outcome-status">Passed QA</span>
+          <p class="outcome-note">Maintained pipeline reliability under deadline pressure. Structured data directories verified against client briefings before each handoff.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample 3 -->
+    <div class="sample">
+      <div class="sample-header">
+        <div class="sample-meta">
+          <div class="sample-index">SAMPLE 03</div>
+          <div class="sample-title">Multimodal Social Media Asset Curation</div>
+          <div class="sample-task">Task: Curate, clean, and structure 2,500 image-text pairs for a fake post detection pipeline</div>
+        </div>
+        <div class="tag-row">
+          <span class="tag accent">PyTorch</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">OCR</span>
+          <span class="tag">Asset Management</span>
+        </div>
+      </div>
+      <div class="sample-body">
+        <div class="qa-panel">
+          <div class="qa-row">
+            <span class="qa-key">Tool / Pipeline</span>
+            <span class="qa-val">PyTorch visual feature extraction + OCR text parsing, structured into a consistent labelled directory schema</span>
+          </div>
+          <div class="qa-row">
+            <span class="qa-key">Production Volume</span>
+            <span class="qa-val">2,500 creative assets — images, embedded text, and metadata — formatted for immediate system ingestion</span>
+          </div>
+          <div class="qa-row">
+            <span class="qa-key">Checking For</span>
+            <span class="qa-val">Label consistency, formatting uniformity, missing or mismatched metadata, images unsuitable for model training</span>
+          </div>
+        </div>
+        <div class="outcome-panel">
+          <span class="outcome-status">Passed QA</span>
+          <p class="outcome-note">All assets verified for strict formatting and label accuracy before pipeline ingestion. Zero rework requested on final dataset delivery.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample 4 -->
+    <div class="sample">
+      <div class="sample-header">
+        <div class="sample-meta">
+          <div class="sample-index">SAMPLE 04</div>
+          <div class="sample-title">Noise Residual Visual Inspection — Forensic QA</div>
+          <div class="sample-task">Task: Visual QA for a dual-branch forensic model checking RGB and noise residual outputs</div>
+        </div>
+        <div class="tag-row">
+          <span class="tag accent">Noise Residual Mapping</span>
+          <span class="tag">Visual Forensics</span>
+          <span class="tag">PyTorch</span>
+        </div>
+      </div>
+      <div class="sample-body">
+        <div class="qa-panel">
+          <div class="qa-row">
+            <span class="qa-key">Tool / Pipeline</span>
+            <span class="qa-val">Custom dual-branch model — RGB visual stream + high-pass noise residual stream — for pixel-level manipulation detection</span>
+          </div>
+          <div class="qa-row">
+            <span class="qa-key">QA Scope</span>
+            <span class="qa-val">Inspect model outputs frame-by-frame for localization mask accuracy, false positives on clean regions, and edge boundary fidelity</span>
+          </div>
+          <div class="qa-row">
+            <span class="qa-key">Checking For</span>
+            <span class="qa-val">Mask bleed into unedited regions, missed boundary transitions, inconsistent confidence across structurally similar patches</span>
+          </div>
+        </div>
+        <div class="outcome-panel">
+          <span class="outcome-status">Passed QA</span>
+          <p class="outcome-note">Visual inspection informed iterative model corrections. Final outputs reached 0.94 pixel accuracy — validated through manual overlay comparison against ground-truth masks.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section-label">Tool Proficiency</div>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <div class="skill-block-label">Image Generation</div>
+        <div class="skill-list">
+          <span class="tag accent">Stable Diffusion</span>
+          <span class="tag">Text-to-Image</span>
+          <span class="tag">Image-to-Image</span>
+          <span class="tag">Inpainting</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">Local AI Frameworks</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-label">Visual QA & Processing</div>
+        <div class="skill-list">
+          <span class="tag accent">OpenCV</span>
+          <span class="tag">Artifact Detection</span>
+          <span class="tag">Noise Residual Mapping</span>
+          <span class="tag">Dataset Curation</span>
+          <span class="tag">Pixel-Level Inspection</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-label">Workflow & Tools</div>
+        <div class="skill-list">
+          <span class="tag accent">Python</span>
+          <span class="tag">Git / GitHub</span>
+          <span class="tag">Google Workspace</span>
+          <span class="tag">File System Management</span>
+          <span class="tag">Structured Data Routing</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-label">Languages</div>
+        <div class="skill-list">
+          <span class="tag accent">English — Fluent</span>
+          <span class="tag">Bengali — Native</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <span class="footer-left">Shoumik Sarkar · ssavi.pro03@gmail.com · +880 1776 892842</span>
+    <span class="footer-right">github.com/ssavi45</span>
+  </div>
+</footer>
+
+</body>
+</html>
