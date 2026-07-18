@@ -1,338 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Shoumik Sarkar — AI Image Production Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<title>Shoumik Sarkar — AI/ML Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --bg:        #0e0e0f;
-    --surface:   #161618;
-    --border:    #2a2a2e;
-    --accent:    #c8a96e;
-    --accent-dim:#7a6540;
-    --text:      #e8e6e1;
-    --muted:     #7a7873;
-    --tag-bg:    #1e1e21;
-    --mono:      'IBM Plex Mono', monospace;
-    --sans:      'Inter', sans-serif;
-  }
+:root {
+  --bg:         #0d1117;
+  --surface:    #161b22;
+  --surface2:   #1c2128;
+  --border:     #30363d;
+  --border-dim: #21262d;
+  --accent:     #6e76e5;
+  --accent-dim: #3d4494;
+  --accent-glow:#6e76e520;
+  --text:       #e6edf3;
+  --muted:      #8b949e;
+  --muted2:     #484f58;
+  --green:      #3fb950;
+  --sans:       'DM Sans', sans-serif;
+  --mono:       'JetBrains Mono', monospace;
+}
 
-  html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-size: 15px;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
 
-  /* ── HEADER ── */
-  header {
-    border-bottom: 1px solid var(--border);
-    padding: 48px 0 40px;
-  }
-  .container { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+a { color: inherit; text-decoration: none; }
 
-  .header-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-  }
+/* ── HERO ── */
+.hero {
+  padding: 88px 0 72px;
+  border-bottom: 1px solid var(--border-dim);
+  position: relative;
+  overflow: hidden;
+}
 
-  h1 {
-    font-size: 32px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin-bottom: 10px;
-  }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, #6e76e510 0%, transparent 70%);
+  pointer-events: none;
+}
 
-  .header-sub {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 28px;
-    line-height: 1.7;
-    max-width: 560px;
-  }
+.container { max-width: 860px; margin: 0 auto; padding: 0 32px; }
 
-  .header-links {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .header-links a {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--muted);
-    text-decoration: none;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .header-links a:hover { color: var(--accent); border-color: var(--accent-dim); }
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+.hero-content { min-width: 0; }
 
-  /* ── SECTION LABEL ── */
-  .section-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent-dim);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-    padding-top: 52px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+/* ── PHOTO FRAME ── */
+.photo-frame {
+  position: relative;
+  width: 172px;
+  height: 172px;
+  flex-shrink: 0;
+}
 
-  /* ── INTRO BLOCK ── */
-  .intro-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 0;
-  }
-  .intro-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 20px 22px;
-  }
-  .intro-card-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--accent-dim);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .intro-card p {
-    font-size: 13.5px;
-    color: var(--muted);
-    line-height: 1.65;
-  }
+/* Outer decorative border that rotates slowly */
+.photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--accent) 0deg,
+    var(--accent-dim) 90deg,
+    transparent 180deg,
+    var(--accent-dim) 270deg,
+    var(--accent) 360deg
+  );
+  animation: spin 8s linear infinite;
+  opacity: 0.7;
+}
 
-  /* ── WORK SAMPLES ── */
-  .sample {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    margin-bottom: 16px;
-    overflow: hidden;
-  }
+/* Inner mask so the gradient ring looks clean */
+.photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--bg);
+}
 
-  .sample-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 20px 24px 16px;
-    gap: 16px;
-    border-bottom: 1px solid var(--border);
-  }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
 
-  .sample-meta { flex: 1; }
+.photo-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface2);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .sample-index {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--accent-dim);
-    letter-spacing: 0.12em;
-    margin-bottom: 4px;
-  }
+.photo-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 
-  .sample-title {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
+/* Fallback initials when no image */
+.photo-initials {
+  font-family: var(--mono);
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  user-select: none;
+}
 
-  .sample-task {
-    font-size: 13px;
-    color: var(--muted);
-  }
+/* Corner accent dots */
+.photo-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  z-index: 2;
+}
+.photo-dot.tl { top: 6px;  left: 6px; }
+.photo-dot.br { bottom: 6px; right: 6px; opacity: 0.4; }
 
-  .tag-row {
-    display: flex;
-    gap: 7px;
-    flex-wrap: wrap;
-    flex-shrink: 0;
-    align-items: flex-start;
-    padding-top: 2px;
-  }
-  .tag {
-    font-family: var(--mono);
-    font-size: 10px;
-    background: var(--tag-bg);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    padding: 3px 9px;
-    border-radius: 3px;
-    white-space: nowrap;
-    letter-spacing: 0.04em;
-  }
-  .tag.accent {
-    border-color: var(--accent-dim);
-    color: var(--accent);
-    background: #1c1810;
-  }
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
 
-  .sample-body {
-    padding: 18px 24px 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-    align-items: start;
-  }
+h1 {
+  font-size: clamp(36px, 6vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
 
-  .qa-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+/* Signature: neural pulse line */
+.pulse-line {
+  width: 100%;
+  height: 2px;
+  margin: 20px 0 24px;
+  position: relative;
+  background: var(--border-dim);
+  border-radius: 2px;
+  overflow: visible;
+}
+.pulse-line::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  border-radius: 2px;
+  animation: pulse 2.4s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;
+}
+@keyframes pulse {
+  0%   { left: -40%; opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
 
-  .qa-row {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  .qa-key {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--accent-dim);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  .qa-val {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.5;
-  }
+.hero-desc {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.hero-desc strong { color: var(--text); font-weight: 400; }
 
-  .outcome-panel {
-    border-left: 1px solid var(--border);
-    padding-left: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+.hero-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 14px;
+  transition: color 0.18s, border-color 0.18s, background 0.18s;
+}
+.hero-link:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+  background: var(--accent-glow);
+}
+.hero-link svg { width: 13px; height: 13px; flex-shrink: 0; }
 
-  .outcome-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: #6abf7b;
-    letter-spacing: 0.08em;
-  }
-  .outcome-status::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #6abf7b;
-    flex-shrink: 0;
-  }
-  .outcome-status.flag { color: #e09a4f; }
-  .outcome-status.flag::before { background: #e09a4f; }
+/* ── SECTION ── */
+.section { padding: 56px 0 0; }
+.section:last-of-type { padding-bottom: 72px; }
 
-  .outcome-note {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.55;
-  }
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.section-head h2 {
+  font-size: 13px;
+  font-family: var(--mono);
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.section-head::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-dim);
+}
 
-  /* ── SKILLS TABLE ── */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    padding-bottom: 60px;
-  }
-  .skill-block {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 18px 20px;
-  }
-  .skill-block-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--accent-dim);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-  }
+/* ── PROJECT CARDS ── */
+.projects { display: flex; flex-direction: column; gap: 12px; }
 
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 28px 0;
-  }
-  footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .footer-left {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--muted);
-  }
-  .footer-right {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent-dim);
-  }
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border-dim);
+  border-radius: 10px;
+  padding: 26px 28px;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+}
+.project-card:hover {
+  border-color: var(--border);
+  background: var(--surface2);
+}
 
-  @media (max-width: 640px) {
-    h1 { font-size: 24px; }
-    .intro-grid { grid-template-columns: 1fr; }
-    .sample-header { flex-direction: column; }
-    .sample-body { grid-template-columns: 1fr; }
-    .outcome-panel { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 16px; }
-    .skills-grid { grid-template-columns: 1fr; }
-  }
+.project-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.project-name {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.project-metric {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green);
+  border: 1px solid #3fb95030;
+  background: #3fb95010;
+  border-radius: 20px;
+  padding: 4px 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.project-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 18px;
+  max-width: 680px;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--muted2);
+  background: var(--bg);
+  border: 1px solid var(--border-dim);
+  border-radius: 4px;
+  padding: 3px 9px;
+  letter-spacing: 0.03em;
+}
+.tag.hi {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+  background: var(--accent-glow);
+}
+
+.project-link {
+  position: absolute;
+  top: 24px; right: 24px;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted2);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.18s;
+}
+.project-link:hover { color: var(--accent); }
+.project-link svg { width: 11px; height: 11px; }
+
+/* ── EXPERIENCE ── */
+.exp-list { display: flex; flex-direction: column; gap: 0; }
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0 32px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border-dim);
+}
+.exp-item:first-child { border-top: 1px solid var(--border-dim); }
+
+.exp-period {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted2);
+  padding-top: 3px;
+  line-height: 1.5;
+}
+
+.exp-role {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.exp-org {
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+.exp-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.exp-points li {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-left: 14px;
+  position: relative;
+}
+.exp-points li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--muted2);
+}
+
+/* ── SKILLS ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.skill-block {
+  background: var(--surface);
+  border: 1px solid var(--border-dim);
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+.skill-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ── EDUCATION ── */
+.edu-block {
+  background: var(--surface);
+  border: 1px solid var(--border-dim);
+  border-radius: 10px;
+  padding: 22px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.edu-degree {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+.edu-inst {
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.edu-note {
+  font-size: 13px;
+  color: var(--muted);
+}
+.edu-year {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted2);
+  white-space: nowrap;
+  padding-top: 3px;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border-dim);
+  padding: 28px 0;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer-name {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted2);
+}
+.footer-contact {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted2);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .photo-frame { width: 120px; height: 120px; margin: 0 auto; }
+  .photo-initials { font-size: 26px; }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  .hero { padding: 56px 0 48px; }
+  .project-top { flex-direction: column; gap: 8px; }
+  .project-link { position: static; margin-bottom: 12px; align-self: flex-end; }
+  .exp-item { grid-template-columns: 1fr; gap: 4px; }
+  .exp-period { padding-top: 0; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .edu-block { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-line::after { animation: none; opacity: 0; }
+}
 </style>
 </head>
 <body>
 
-<header>
+<!-- HERO -->
+<header class="hero">
   <div class="container">
-    <div class="header-label">AI Image Production · Portfolio</div>
-    <h1>Shoumik Sarkar</h1>
-    <p class="header-sub">
-      AI/ML Engineer with hands-on experience operating image generation pipelines,
-      conducting visual quality control on large-scale datasets, and managing structured
-      production workflows. Based in Dhaka, Bangladesh.
-    </p>
-    <div class="header-links">
-      <a href="mailto:ssavi.pro03@gmail.com">ssavi.pro03@gmail.com</a>
-      <a href="https://github.com/ssavi45" target="_blank">github.com/ssavi45</a>
-      <a href="https://linkedin.com/in/shoumik-sarkar-nsu" target="_blank">linkedin.com/in/shoumik-sarkar-nsu</a>
+    <div class="hero-inner">
+
+      <!-- Left: text -->
+      <div class="hero-content">
+        <div class="hero-eyebrow">AI / ML Engineer</div>
+        <h1>Shoumik Sarkar</h1>
+        <div class="pulse-line"></div>
+        <p class="hero-desc">
+          Building <strong>multimodal AI systems</strong> — from forensic image analysis and deception detection to fake content identification. Based in Dhaka, Bangladesh. Open to AI/ML and software engineering roles.
+        </p>
+        <div class="hero-links">
+          <a class="hero-link" href="https://github.com/ssavi45" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            github.com/ssavi45
+          </a>
+          <a class="hero-link" href="https://linkedin.com/in/shoumik-sarkar-nsu" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="hero-link" href="mailto:ssavi.pro03@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            ssavi.pro03@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: framed photo -->
+      <div class="photo-frame">
+        <span class="photo-dot tl"></span>
+        <span class="photo-dot br"></span>
+        <div class="photo-inner">
+          <!-- Replace the src below with your actual photo URL or relative path -->
+          <img
+            src="https://avatars.githubusercontent.com/ssavi45"
+            alt="Shoumik Sarkar"
+            onerror="this.style.display='none';this.parentElement.querySelector('.photo-initials').style.display='flex';"
+          />
+          <span class="photo-initials" style="display:none;">SS</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </header>
@@ -340,218 +552,226 @@
 <main>
   <div class="container">
 
-    <!-- ABOUT -->
-    <div class="section-label">About This Portfolio</div>
-    <div class="intro-grid">
-      <div class="intro-card">
-        <div class="intro-card-label">What I Do</div>
-        <p>Operate AI image generation tools, run structured prompting workflows, and perform first-pass visual QA — catching artifacts, inconsistencies, and output failures before delivery.</p>
-      </div>
-      <div class="intro-card">
-        <div class="intro-card-label">Production Context</div>
-        <p>Each sample below reflects real production work: the tool used, the task briefed, what I was checking for, and the outcome. No showcasing. Just the work.</p>
-      </div>
-    </div>
+    <!-- PROJECTS -->
+    <section class="section">
+      <div class="section-head"><h2>Projects</h2></div>
+      <div class="projects">
 
-    <!-- WORK SAMPLES -->
-    <div class="section-label">Work Samples</div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-name">DeceptiLens</div>
+            <span class="project-metric">82.11% accuracy · DOLOS benchmark</span>
+          </div>
+          <p class="project-desc">
+            Multimodal deception detection system fusing visual, facial, and acoustic signals through a dual-stream cross-attention network. Combines ResNet-18 visual embeddings, MediaPipe facial blendshapes, and Librosa acoustic features with an SVM / RF / HistGradientBoosting ensemble trained on the DOLOS dataset.
+          </p>
+          <div class="tag-row">
+            <span class="tag hi">PyTorch</span>
+            <span class="tag hi">Cross-Attention</span>
+            <span class="tag">ResNet-18</span>
+            <span class="tag">MediaPipe</span>
+            <span class="tag">Librosa</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Multimodal Fusion</span>
+          </div>
+        </div>
 
-    <!-- Sample 1 -->
-    <div class="sample">
-      <div class="sample-header">
-        <div class="sample-meta">
-          <div class="sample-index">SAMPLE 01</div>
-          <div class="sample-title">AI-Manipulated Image Dataset — Paired Generation</div>
-          <div class="sample-task">Task: Generate 10,000 authentic / manipulated / mask image triplets for forensic model training</div>
-        </div>
-        <div class="tag-row">
-          <span class="tag accent">Stable Diffusion</span>
-          <span class="tag">Inpainting</span>
-          <span class="tag">SAM Masks</span>
-          <span class="tag">Dataset Curation</span>
-        </div>
-      </div>
-      <div class="sample-body">
-        <div class="qa-panel">
-          <div class="qa-row">
-            <span class="qa-key">Tool / Pipeline</span>
-            <span class="qa-val">Stable Diffusion inpainting + Segment Anything Model (SAM) for semantic mask generation</span>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-name">Dual-Branch RGB-Noise Forensic Network</div>
+            <span class="project-metric">0.94 pixel accuracy</span>
           </div>
-          <div class="qa-row">
-            <span class="qa-key">Production Volume</span>
-            <span class="qa-val">10,000 paired image folders — each containing an original, a manipulated variant, and a binary pixel mask</span>
-          </div>
-          <div class="qa-row">
-            <span class="qa-key">Checking For</span>
-            <span class="qa-val">Structural blending anomalies, lighting mismatches at inpainting boundaries, mask precision, inconsistent texture transitions</span>
+          <p class="project-desc">
+            Lightweight forensic model for AI image manipulation detection and pixel-level localization. Fuses a visual RGB branch with a high-pass noise residual branch to detect inpainting artifacts, lighting mismatches, and boundary anomalies. Trained and evaluated on a custom 10,000-image dataset of authentic, manipulated, and mask triplets.
+          </p>
+          <div class="tag-row">
+            <span class="tag hi">PyTorch</span>
+            <span class="tag hi">Stable Diffusion</span>
+            <span class="tag">SAM</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Noise Residual Mapping</span>
+            <span class="tag">Image Forensics</span>
+            <span class="tag">Dataset Curation</span>
           </div>
         </div>
-        <div class="outcome-panel">
-          <span class="outcome-status">Passed QA</span>
-          <p class="outcome-note">Dense pixel-wise visual checks performed on all outputs before dataset finalisation. Anomalous generations flagged and re-run. Final dataset achieved 0.94 pixel accuracy on downstream localization tasks.</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Sample 2 -->
-    <div class="sample">
-      <div class="sample-header">
-        <div class="sample-meta">
-          <div class="sample-index">SAMPLE 02</div>
-          <div class="sample-title">Visual Data Quality Filtration — ML Pipeline</div>
-          <div class="sample-task">Task: Assess and filter high-volume image data for pipeline reliability at Flyrank AI</div>
-        </div>
-        <div class="tag-row">
-          <span class="tag accent">Python / OpenCV</span>
-          <span class="tag">Visual QA</span>
-          <span class="tag">Artifact Detection</span>
-        </div>
-      </div>
-      <div class="sample-body">
-        <div class="qa-panel">
-          <div class="qa-row">
-            <span class="qa-key">Tool / Pipeline</span>
-            <span class="qa-val">Python-based image processing scripts using OpenCV for automated artifact detection and isolation</span>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-name">RumorFusionX</div>
+            <span class="project-metric">Bangla · Targeting OSNEM / Elsevier</span>
           </div>
-          <div class="qa-row">
-            <span class="qa-key">Production Context</span>
-            <span class="qa-val">Fast-paced remote team workflow, high-volume data ingestion, strict client briefing alignment required</span>
-          </div>
-          <div class="qa-row">
-            <span class="qa-key">Checking For</span>
-            <span class="qa-val">Corrupted frames, resolution inconsistencies, visual noise, misaligned inputs that would degrade downstream model training</span>
+          <p class="project-desc">
+            Multimodal fake social media post detection pipeline for Bangla-language content. Custom cross-attention architecture fusing OCR-extracted text features and deep visual representations. Incorporates SmoothGrad and LIME explainability to surface model reasoning on flagged posts.
+          </p>
+          <div class="tag-row">
+            <span class="tag hi">PyTorch</span>
+            <span class="tag hi">Cross-Attention</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">OCR</span>
+            <span class="tag">SmoothGrad</span>
+            <span class="tag">LIME</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Multimodal</span>
           </div>
         </div>
-        <div class="outcome-panel">
-          <span class="outcome-status">Passed QA</span>
-          <p class="outcome-note">Maintained pipeline reliability under deadline pressure. Structured data directories verified against client briefings before each handoff.</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Sample 3 -->
-    <div class="sample">
-      <div class="sample-header">
-        <div class="sample-meta">
-          <div class="sample-index">SAMPLE 03</div>
-          <div class="sample-title">Multimodal Social Media Asset Curation</div>
-          <div class="sample-task">Task: Curate, clean, and structure 2,500 image-text pairs for a fake post detection pipeline</div>
-        </div>
-        <div class="tag-row">
-          <span class="tag accent">PyTorch</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">OCR</span>
-          <span class="tag">Asset Management</span>
-        </div>
-      </div>
-      <div class="sample-body">
-        <div class="qa-panel">
-          <div class="qa-row">
-            <span class="qa-key">Tool / Pipeline</span>
-            <span class="qa-val">PyTorch visual feature extraction + OCR text parsing, structured into a consistent labelled directory schema</span>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-name">MedHelp</div>
+            <span class="project-metric">RAG · Medical QA</span>
           </div>
-          <div class="qa-row">
-            <span class="qa-key">Production Volume</span>
-            <span class="qa-val">2,500 creative assets — images, embedded text, and metadata — formatted for immediate system ingestion</span>
-          </div>
-          <div class="qa-row">
-            <span class="qa-key">Checking For</span>
-            <span class="qa-val">Label consistency, formatting uniformity, missing or mismatched metadata, images unsuitable for model training</span>
+          <p class="project-desc">
+            Retrieval-Augmented Generation system for medical question answering. Combines a vector store with an LLM to ground responses in retrieved clinical context, reducing hallucination on domain-specific queries.
+          </p>
+          <div class="tag-row">
+            <span class="tag hi">RAG</span>
+            <span class="tag">LLM</span>
+            <span class="tag">Vector Store</span>
+            <span class="tag">Python</span>
+            <span class="tag">LangChain</span>
           </div>
         </div>
-        <div class="outcome-panel">
-          <span class="outcome-status">Passed QA</span>
-          <p class="outcome-note">All assets verified for strict formatting and label accuracy before pipeline ingestion. Zero rework requested on final dataset delivery.</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Sample 4 -->
-    <div class="sample">
-      <div class="sample-header">
-        <div class="sample-meta">
-          <div class="sample-index">SAMPLE 04</div>
-          <div class="sample-title">Noise Residual Visual Inspection — Forensic QA</div>
-          <div class="sample-task">Task: Visual QA for a dual-branch forensic model checking RGB and noise residual outputs</div>
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-name">Football Genius</div>
+            <span class="project-metric">Full-Stack · Live</span>
+          </div>
+          <p class="project-desc">
+            Full-stack football knowledge web application with a quiz engine, player and match data, and a clean interactive UI. Built end-to-end as a personal project exploring full-stack architecture alongside AI/ML work.
+          </p>
+          <div class="tag-row">
+            <span class="tag hi">Full-Stack</span>
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">REST API</span>
+          </div>
         </div>
-        <div class="tag-row">
-          <span class="tag accent">Noise Residual Mapping</span>
-          <span class="tag">Visual Forensics</span>
-          <span class="tag">PyTorch</span>
-        </div>
+
       </div>
-      <div class="sample-body">
-        <div class="qa-panel">
-          <div class="qa-row">
-            <span class="qa-key">Tool / Pipeline</span>
-            <span class="qa-val">Custom dual-branch model — RGB visual stream + high-pass noise residual stream — for pixel-level manipulation detection</span>
-          </div>
-          <div class="qa-row">
-            <span class="qa-key">QA Scope</span>
-            <span class="qa-val">Inspect model outputs frame-by-frame for localization mask accuracy, false positives on clean regions, and edge boundary fidelity</span>
-          </div>
-          <div class="qa-row">
-            <span class="qa-key">Checking For</span>
-            <span class="qa-val">Mask bleed into unedited regions, missed boundary transitions, inconsistent confidence across structurally similar patches</span>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+      <div class="section-head"><h2>Experience</h2></div>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-period">Jul 2026 – Present<br/>Remote</div>
+          <div>
+            <div class="exp-role">Machine Learning Engineer Intern</div>
+            <div class="exp-org">Flyrank AI</div>
+            <ul class="exp-points">
+              <li>Maintain high-volume data pipeline reliability across fast-paced team workflows.</li>
+              <li>Conduct visual data assessments and quality filtration using Python and OpenCV to isolate and correct image artifacts.</li>
+              <li>Ensure structured data directories and outputs strictly align with client briefings.</li>
+            </ul>
           </div>
         </div>
-        <div class="outcome-panel">
-          <span class="outcome-status">Passed QA</span>
-          <p class="outcome-note">Visual inspection informed iterative model corrections. Final outputs reached 0.94 pixel accuracy — validated through manual overlay comparison against ground-truth masks.</p>
+
+        <div class="exp-item">
+          <div class="exp-period">2026 – Present<br/>Dhaka, BD</div>
+          <div>
+            <div class="exp-role">Research Engineer (Project Basis)</div>
+            <div class="exp-org">Verdant</div>
+            <ul class="exp-points">
+              <li>Contributing to applied ML research and pipeline development at a small Dhaka-based AI startup.</li>
+            </ul>
+          </div>
         </div>
+
       </div>
-    </div>
+    </section>
 
     <!-- SKILLS -->
-    <div class="section-label">Tool Proficiency</div>
-    <div class="skills-grid">
-      <div class="skill-block">
-        <div class="skill-block-label">Image Generation</div>
-        <div class="skill-list">
-          <span class="tag accent">Stable Diffusion</span>
-          <span class="tag">Text-to-Image</span>
-          <span class="tag">Image-to-Image</span>
-          <span class="tag">Inpainting</span>
-          <span class="tag">Prompt Engineering</span>
-          <span class="tag">Local AI Frameworks</span>
+    <section class="section">
+      <div class="section-head"><h2>Skills</h2></div>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <div class="skill-label">ML & Deep Learning</div>
+          <div class="skill-tags">
+            <span class="tag hi">PyTorch</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Cross-Attention</span>
+            <span class="tag">ResNet</span>
+            <span class="tag">ViT</span>
+            <span class="tag">Ensemble Methods</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">Computer Vision & Image AI</div>
+          <div class="skill-tags">
+            <span class="tag hi">OpenCV</span>
+            <span class="tag hi">Stable Diffusion</span>
+            <span class="tag">MediaPipe</span>
+            <span class="tag">SAM</span>
+            <span class="tag">Inpainting</span>
+            <span class="tag">Noise Residuals</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">NLP & Multimodal</div>
+          <div class="skill-tags">
+            <span class="tag hi">RAG</span>
+            <span class="tag">LLM APIs</span>
+            <span class="tag">OCR</span>
+            <span class="tag">Librosa</span>
+            <span class="tag">Feature Fusion</span>
+            <span class="tag">LIME / SmoothGrad</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-label">Stack & Tools</div>
+          <div class="skill-tags">
+            <span class="tag hi">Python</span>
+            <span class="tag">Git</span>
+            <span class="tag">Google Colab</span>
+            <span class="tag">Kaggle</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Docker</span>
+            <span class="tag">React</span>
+          </div>
         </div>
       </div>
-      <div class="skill-block">
-        <div class="skill-block-label">Visual QA & Processing</div>
-        <div class="skill-list">
-          <span class="tag accent">OpenCV</span>
-          <span class="tag">Artifact Detection</span>
-          <span class="tag">Noise Residual Mapping</span>
-          <span class="tag">Dataset Curation</span>
-          <span class="tag">Pixel-Level Inspection</span>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section">
+      <div class="section-head"><h2>Education</h2></div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="edu-block">
+          <div>
+            <div class="edu-degree">BSc in Computer Science &amp; Engineering</div>
+            <div class="edu-inst">North South University, Dhaka — Intelligent Systems Track</div>
+            <div class="edu-note">Capstone: Multimodal deception detection (DeceptiLens) · Active member, NSUCEC</div>
+          </div>
+          <div class="edu-year">May 2026</div>
         </div>
       </div>
-      <div class="skill-block">
-        <div class="skill-block-label">Workflow & Tools</div>
-        <div class="skill-list">
-          <span class="tag accent">Python</span>
-          <span class="tag">Git / GitHub</span>
-          <span class="tag">Google Workspace</span>
-          <span class="tag">File System Management</span>
-          <span class="tag">Structured Data Routing</span>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section">
+      <div class="section-head"><h2>Certifications</h2></div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="edu-block">
+          <div>
+            <div class="edu-degree">Vision Language Models (VLM) Bootcamp</div>
+            <div class="edu-inst">OpenCV University</div>
+            <div class="edu-note">Specialized training on multimodal AI architectures and visual feature manipulation</div>
+          </div>
+          <div class="edu-year">Jan 2026</div>
         </div>
       </div>
-      <div class="skill-block">
-        <div class="skill-block-label">Languages</div>
-        <div class="skill-list">
-          <span class="tag accent">English — Fluent</span>
-          <span class="tag">Bengali — Native</span>
-        </div>
-      </div>
-    </div>
+    </section>
 
   </div>
 </main>
 
 <footer>
   <div class="container">
-    <span class="footer-left">Shoumik Sarkar · ssavi.pro03@gmail.com · +880 1776 892842</span>
-    <span class="footer-right">github.com/ssavi45</span>
+    <span class="footer-name">Shoumik Sarkar · Dhaka, Bangladesh</span>
+    <span class="footer-contact">ssavi.pro03@gmail.com · +880 1776 892842</span>
   </div>
 </footer>
 
