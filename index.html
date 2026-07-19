@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Shoumik Sarkar - AI/ML Engineer building multimodal systems, computer vision tools, and thoughtful digital products.">
   <meta name="theme-color" content="#e9e4da">
+  <link rel="icon" type="image/png" href="favicon.png">
   <title>Shoumik Sarkar - AI/ML Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,11 +88,11 @@
     .degree-header { display:grid; grid-template-columns:minmax(0,1fr) clamp(130px,15vw,205px); align-items:start; gap:20px; margin-top:27px; }
     .degree-title { max-width:8.5ch; margin:0; font-size:clamp(3rem,4.8vw,5.8rem); font-weight:500; letter-spacing:-.075em; line-height:.84; }
     .degree-logo { width:100%; max-width:205px; aspect-ratio:1; object-fit:contain; justify-self:end; }
-    .degree-meta { margin:18px 0 0; padding-bottom:16px; border-bottom:1px solid var(--ink); font:11px/1.4 var(--mono); letter-spacing:.055em; text-transform:uppercase; }
+    .degree-meta { margin:28px 0 0; padding-bottom:16px; border-bottom:1px solid var(--ink); font:18px/1.4 var(--mono); letter-spacing:.055em; text-transform:uppercase; }
     .coursework-block { padding-top:15px; }
     .coursework-title { margin:0 0 13px; font:italic clamp(1.8rem,2.6vw,3.25rem)/.9 var(--serif); letter-spacing:-.06em; text-transform:uppercase; }
     .course-list { display:flex; flex-wrap:wrap; gap:9px; }
-    .course-list span { padding:8px 11px; border-radius:999px; background:var(--ink); color:var(--paper); font:10px/1.25 var(--sans); }
+    .course-list span { padding:12px 18px; border-radius:999px; background:var(--ink); color:var(--paper); font:15px/1.25 var(--sans); }
     .certificate-title { margin:21px 0 14px; font-size:clamp(1.8rem,2.45vw,3.05rem); font-weight:500; letter-spacing:-.065em; line-height:.93; }
     .certificate-preview { display:block; width:100%; aspect-ratio:1.415; border:1px solid var(--ink); object-fit:cover; object-position:center; }
     .certificate-copy { margin:13px 0 0; max-width:60ch; font-size:12px; line-height:1.42; }
@@ -115,6 +116,12 @@
     .contact:hover .contact-cursor-dot { opacity:1; }
     @keyframes contact-grain-shift { 0% { transform:translate(0,0); } 12% { transform:translate(-2%,2%); } 24% { transform:translate(2%,-2%); } 36% { transform:translate(-1%,-1%); } 48% { transform:translate(1%,2%); } 60% { transform:translate(-2%,1%); } 72% { transform:translate(2%,2%); } 84% { transform:translate(-1%,-2%); } 100% { transform:translate(0,0); } }
     @media (prefers-reduced-motion:reduce) { .contact-cursor-dot { display:none; }.contact-grain { animation:none; } }
+    /* Hero portrait details */
+    .hero-photo-block { display:flex; flex-direction:column; align-items:flex-end; }
+    .hero-aside .hero-photo-intro { width:clamp(230px,19vw,310px); max-width:none; margin:-10px 0 24px; font-size:18px; line-height:1.34; }
+    .hero-portrait-wrap { position:relative; width:fit-content; margin-left:auto; }
+    .hero-photo-quote { position:absolute; right:calc(100% + 17px); bottom:4px; color:var(--ink); font:12px var(--mono); letter-spacing:.08em; text-transform:uppercase; white-space:nowrap; writing-mode:vertical-rl; transform:rotate(180deg); opacity:.76; }
+    @media (max-width:720px) { .hero-aside .hero-photo-intro { width:170px; margin:-6px 0 18px; }.hero-photo-quote { right:calc(100% + 10px); bottom:2px; font-size:8px; } }
   </style>
 </head>
 <body>
@@ -139,7 +146,7 @@
       <div class="hero-top"><span class="eyebrow">AI / ML Engineer</span><span class="availability"><i></i> Open to opportunities</span></div>
       <div class="hero-grid">
         <h1 class="hero-title"><span class="line">Building</span><span class="line indent"><em>intelligent</em></span><span class="line">systems</span><span class="line indent">that <em>notice.</em></span></h1>
-        <div class="hero-aside"><p>Turning signals, pixels, language, and data into <b>useful AI experiences.</b></p><div class="hero-photo-block"><div class="portrait"><img src="ssavi.png" alt="Portrait of Shoumik Sarkar"></div><div class="hero-photo-meta"><span>Dhaka, BD</span><span id="heroTime">Loading local time...</span></div></div></div>
+        <div class="hero-aside"><div class="hero-photo-block"><p class="hero-photo-intro">Turning signals, pixels, language, and data into <b>useful AI experiences.</b></p><div class="hero-portrait-wrap"><span class="hero-photo-quote">Iterate, Curate, Adapt</span><div class="portrait"><img src="ssavi.png" alt="Portrait of Shoumik Sarkar"></div></div><div class="hero-photo-meta"><span>Dhaka, BD</span><span id="heroTime">Loading local time...</span></div></div></div>
       </div>
       <div class="hero-bottom"><span class="scroll-note"><i></i> Scroll to explore</span></div>
     </div></section>
