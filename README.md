@@ -6,7 +6,7 @@ I am an aspiring AI/ML Engineer focused on multimodal learning, computer vision,
 - **Current Focus:** Machine Learning Engineer Intern at **Flyrank AI** 
 - **Education:** BSc in Computer Science & Engineering from North South University (Intelligent System Engineering)
 - **Location:** Dhaka, Bangladesh
-- **Connect:** ssavi.pro03@gmail.com | [LinkedIn](https://linkedin.com/in/shoumik-sarkar-nsu)
+- **Connect:** [Portfolio](http://shoumik.pro.bd/) | ssavi.pro03@gmail.com | [LinkedIn](https://linkedin.com/in/shoumik-sarkar-nsu)
 
 ---
 
