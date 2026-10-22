@@ -25,6 +25,8 @@ def build(source, filename, max_size):
             image.save(target, optimize=True, compress_level=9)
         else:
             image.save(target, "WEBP", lossless=True, method=6, exact=True)
+            # Older browsers that do not decode WebP receive a web-sized PNG.
+            image.save(target.with_suffix(".png"), optimize=True, compress_level=9)
         # Check decoded pixels against the resized image, including transparency.
         with Image.open(target) as decoded:
             assert decoded.convert("RGBA").tobytes() == image.tobytes(), target
@@ -47,6 +49,7 @@ def main():
         for path in (ROOT / "assets").glob("*.png")
         if path.relative_to(ROOT).as_posix() in references
         or f"assets/optimized/{path.stem}.webp" in references
+        or f"assets/optimized/{path.stem}.png" in references
     )
     results = [build(icon, Path(icon).stem + ".webp", (192, 192)) for icon in icons]
     for source, filename, size in [

@@ -1,0 +1,4 @@
+dist/
+.playwright-mcp/
+__pycache__/
+.site-validation/
