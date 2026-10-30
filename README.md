@@ -1,12 +1,13 @@
 # Hi, I'm Shoumik Sarkar
-### AI/ML Engineer | Multimodal Learning & Computer Vision Specialist
+### Software and AI/ML Engineer | Computer Vision & Multimodal Learning
 
-I am an aspiring AI/ML Engineer focused on multimodal learning, computer vision, and building end-to-end digital products. I specialize in translating complex datasets into actionable engineering solutions, designing scalable local AI tools, and deploying robust full-stack workflows.
+I work on computer vision and multimodal models, along with the APIs and web applications that use them. My projects include video-based deception detection, multilingual misinformation classification, and football trivia.
 
-- **Current Focus:** Machine Learning Engineer Intern at **Flyrank AI** 
+- **Recent experience:** Machine Learning Engineer Intern at **Flyrank AI**, June-September 2026
+- **Previous experience:** Research Engineer at **Verdant**, May-September 2026
 - **Education:** BSc in Computer Science & Engineering from North South University (Intelligent System Engineering)
 - **Location:** Dhaka, Bangladesh
-- **Connect:** [Portfolio](http://shoumik.pro.bd/) | ssavi.pro03@gmail.com | [LinkedIn](https://linkedin.com/in/shoumik-sarkar-nsu)
+- **Connect:** [Portfolio](https://shoumik.pro.bd/) | ssavi.pro03@gmail.com | [LinkedIn](https://linkedin.com/in/shoumik-sarkar-nsu)
 
 ---
 
@@ -32,15 +33,15 @@ I am an aspiring AI/ML Engineer focused on multimodal learning, computer vision,
 
 #### [DeceptiLens: Multimodal Deception Detection](https://github.com/ssavi45/deceptilens-multimodal-deception-pipeline)
 * Built an end-to-end multimodal pipeline combining facial landmarks (MediaPipe), audio descriptors (Librosa), and visual embeddings (ResNet-18).
-* Designed a custom cross-attention architecture in PyTorch for bidirectional feature fusion, hitting **82.11% accuracy** on the DOLOS dataset.
+* Implemented cross-attention in PyTorch to combine features, achieving **82.11% accuracy** on the DOLOS dataset.
 * Deployed as an interactive Streamlit app with real-time performance visualizations.
 
 #### [RumorFusionX: Multimodal Fake Social Media Detection](https://github.com/ssavi45/RumorFusionX)
 * Developed a misinformation pipeline integrating OCR text extraction, image features, and LLM contextual descriptions.
-* Processed a multilingual dataset of 2,500 images, yielding a **93.07% classification accuracy** using feature fusion via REST APIs.
+* Processed a multilingual dataset of 2,500 images and achieved **93.07% classification accuracy** with feature fusion via REST APIs.
 
 #### [Football Genius: Full Stack Trivia Platform](https://github.com/ssavi45/Football-Genius)
-* Engineered a mobile-first responsive web app integrating the Google Gemini AI API and Supabase Auth (OAuth/OTP).
+* Built a responsive trivia site using the Gemini API and Supabase Auth for Google sign-in and one-time passwords.
 * Automated live player statistics updates using a **GitHub Actions CI/CD pipeline** with a scheduled Node.js scraper.
 
 ---
